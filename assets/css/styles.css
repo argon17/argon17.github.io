@@ -429,7 +429,7 @@ a.dotted-link:hover {
   color: #ccd1d6;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Lato", arial, sans-serif;
+  /* font-family: 'Ubuntu', arial, sans-serif; */
   position: absolute;
   right: 0;
   top: 0;
@@ -507,7 +507,7 @@ a.dotted-link:hover {
 }
 
 .education .item .university {
-  font-family: "Lato", arial, sans-serif;
+  /* font-family: "Lato", arial, sans-serif; */
   font-size: 13px;
   color: #B4A5A5;
   font-weight: 600;
