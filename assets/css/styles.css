@@ -9,7 +9,8 @@
 body {
     font-family: 'Ubuntu', arial, sans-serif;
     color: #B4A5A5;
-    background: #3C415C;
+    background: #151515;
+    /* background: #3C415C; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -117,7 +118,7 @@ a.dotted-link:hover {
 /* ======= Header ======= */
 .header {
     padding: 30px 0;
-    background: #3C415C;
+    /* background: #3C415C; */
     border-top: 10px solid #778492;
 }
 
@@ -183,8 +184,10 @@ a.dotted-link:hover {
 }
 
 .section .section-inner {
-    background: #151515;
+    /* background: #151515; */
+    z-index: 1000;
     padding: 30px;
+    box-shadow: 0 5px 35px rgba(167, 151, 151, 0.2);
 }
 
 .section .heading {
