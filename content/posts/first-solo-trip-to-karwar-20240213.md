@@ -9,9 +9,8 @@ tags = ["motorcycling", "travel", "xpulse"]
 +++
 
 ###
-<p align="center">
-    <img src="/images/posts/first-solo-trip-to-karwar-20240213/01_MotorcycleHillsAndMorningSun.jpg" alt="A Motorcycle, Hills And Morning Sun" width="700">
-</p>
+| ![Motorcycle and Hills at Sunrise](/images/posts/first-solo-trip-to-karwar-20240213/01_MotorcycleHillsAndMorningSun.jpg) |
+|--------------------------------------------------------------------------------------------------|
 
 I had taken a few days off from work — not because I was burnt out or had any plans, but simply because I needed a break. I believe in the mantra:
 **"Rest while you can, not when you have to."** 😉
@@ -42,10 +41,8 @@ I was all set!
 I left Bengaluru at around 5:30 AM, taking this route:
 **Bengaluru → Tumakuru → Kadur → Shivamogga → Sagara → Honnavar → Karwar.**
 
-<div style="display: flex; justify-content: center;">
-  <img src="/images/posts/first-solo-trip-to-karwar-20240213/02_Breakfast.jpg" alt="Breakfast" width="400" style="margin-right: 10px;">
-  <img src="/images/posts/first-solo-trip-to-karwar-20240213/03_MotorcycleAndCoconutTrees.jpg" alt="Motorcycle And Coconut Trees" width="400">
-</div>
+| ![Breakfast](/images/posts/first-solo-trip-to-karwar-20240213/02_Breakfast.jpg) | ![Motorcycle and Coconut Trees](/images/posts/first-solo-trip-to-karwar-20240213/03_MotorcycleAndCoconutTrees.jpg) |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 
 ---
 
@@ -57,9 +54,13 @@ But, Glad that I didn't. While I was riding, there were a lot of beautiful scene
 I think in general, nature has truly been kind to **North Karnataka**.
 Also, The excitement kept increasing as the number of kilometres remaining on my screen was moving towards the double digits.
 
-<p align="center">
-    <img src="/images/posts/first-solo-trip-to-karwar-20240213/04_ARiverAndHillsAround.jpg" alt="A Motorcycle, Hills And Morning Sun" width="600">
-</p>
+<div class="columns">
+  <div class="column is-12">
+    <figure class="image is-16by9">
+      <img src="/images/posts/first-solo-trip-to-karwar-20240213/04_ARiverAndHillsAround.jpg" alt="A river and hills around">
+    </figure>
+  </div>
+</div>
 
 ---
 
@@ -69,9 +70,13 @@ This was my first-ever encounter with the sea. I couldn't believe I was riding r
 
 Even though it wasn't moving properly on the sand, I tried to get as close as I could. Oh man, what a beautiful view it was! I was already in Karwar, and I had arrived at the **Karwar beach** at the perfect time of sunset.
 
-<p align="center">
-    <img src="/images/posts/first-solo-trip-to-karwar-20240213/05_KarwarArrival.gif" alt="Karwar Arrival" width="600">
-</p>
+<div class="columns">
+  <div class="column is-12">
+    <figure class="image is-16by9">
+      <img src="/images/posts/first-solo-trip-to-karwar-20240213/05_KarwarArrival.gif" alt="Karwar Arrival">
+    </figure>
+  </div>
+</div>
 
 It felt like a victory. I took off my gloves and helmet and sat there, watching and listening to the waves until it got dark.
 Finally, I rode to my homestay to rest.
@@ -86,9 +91,9 @@ The next day, I visited several places:
 - **Polem Beach**
 - **Palolem Beach**
 
-| ![Image 1](/images/posts/first-solo-trip-to-karwar-20240213/06_KarwarRailwayStation.jpeg) | ![Image 2](/images/posts/first-solo-trip-to-karwar-20240213/07_PolemBeach.jpg) |
-|------------------------------------------|------------------------------------------|
-| ![Image 3](/images/posts/first-solo-trip-to-karwar-20240213/08_PalolemBeach.jpg) | ![Image 4](/images/posts/first-solo-trip-to-karwar-20240213/09_SunsetAtCaboDeRamaFort.jpg) |
+| ![Karwar Railway Station](/images/posts/first-solo-trip-to-karwar-20240213/06_KarwarRailwayStation.jpeg) | ![Polem Beach](/images/posts/first-solo-trip-to-karwar-20240213/07_PolemBeach.jpg)             |
+|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| ![Palolem Beach](/images/posts/first-solo-trip-to-karwar-20240213/08_PalolemBeach.jpg)          | ![Sunset at Cabo De Rama Fort](/images/posts/first-solo-trip-to-karwar-20240213/09_SunsetAtCaboDeRamaFort.jpg) |
 
 I ended the day with a serene sunset at **Cabo De Rama Fort**.
 
@@ -103,10 +108,8 @@ There was a clay home with a lot of banana trees around it. I saw one old lady t
 
 And there what I witnessed was truly amazing. A peaceful river flowing between mountains under the gentle morning sun. I accidentally discovered this beautiful underrated hidden gem, No one was there, I was enjoying the view all by myself. I sat over there on a stone for almost an hour.
 
-<div style="display: flex; justify-content: center;">
-  <img src="/images/posts/first-solo-trip-to-karwar-20240213/10_HiddenGem1.jpeg" alt="Hidden Gem 1" width="400" style="margin-right: 10px;">
-  <img src="/images/posts/first-solo-trip-to-karwar-20240213/11_HiddenGem2.jpg" alt="Hidden Gem 2" width="400">
-</div>
+| ![Hidden Gem 1](/images/posts/first-solo-trip-to-karwar-20240213/10_HiddenGem1.jpeg) | ![Hidden Gem 2](/images/posts/first-solo-trip-to-karwar-20240213/11_HiddenGem2.jpg) |
+|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 
 ---
 
@@ -116,10 +119,6 @@ By afternoon, I had covered more than half the distance to Bengaluru. But the we
 
 The next morning, I visited the **Chitradurga Fort**. And after the breakfast, I checked out and left for Bengaluru.
 
-<div style="display: flex; justify-content: center;">
-  <img src="/images/posts/first-solo-trip-to-karwar-20240213/12_ChitradurgaFort1.jpg" alt="Chitradurga Fort 1" width="400" style="margin-right: 10px;">
-  <img src="/images/posts/first-solo-trip-to-karwar-20240213/13_ChitradurgaFort2.jpg" alt="Chitradurga Fort 2" width="400">
-</div>
 
----
-
+| ![Chitradurga Fort](/images/posts/first-solo-trip-to-karwar-20240213/12_ChitradurgaFort.jpg) | ![Motorcycle and Windmills](/images/posts/first-solo-trip-to-karwar-20240213/13_MotorcycleAndWindMills.jpg) |
+|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
