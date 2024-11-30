@@ -2,7 +2,7 @@
 base_url = "https://argon17.github.io"
 
 # The site title and description; used in feeds by default.
-title = "argon."
+title = "argon"
 description = ""
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -71,6 +71,10 @@ email = "premsagar0247@gmail.com"
 instagram = "_argon17"
 
 [extra.author]
-name = "Argon"
+name = "Prem"
 avatar = "images/avatar.jpg"
+avatar_no_bg = "images/avatar-no-bg.png"
+avatar_round_bg = "images/avatar-bg-round.png"
 
+[extra.navbar]
+title = "argon."
