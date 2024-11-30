@@ -13,7 +13,7 @@ tags = ["writing", "poems"]
 Go outside and get some air, Mom told<br>
 she thinks, I'm depressed,<br>
 I should meet new people<br>
-talk to them, chill with them.<br>
+talk to them, chill with them.<br><br>
 
 How do I tell her that<br>
 initiating conversation is a hard stuff for me,<br>

@@ -1,6 +1,6 @@
 +++
 title="First Ever Solo Trip to Karwar"
-description="A journey filled with beautiful landscapes, unexpected mishaps, hidden gems, and the unforgettable experience of witnessing the sea for the first time"
+description="A 1200 kms journey filled with beautiful landscapes, unexpected mishaps, hidden gems, and the unforgettable experience of witnessing the sea for the first time"
 date=2024-02-13
 
 [taxonomies]

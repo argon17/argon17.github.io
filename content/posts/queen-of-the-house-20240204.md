@@ -1,6 +1,6 @@
 +++
 title="Queen of the house"
-description=""
+description="While the poem can be interpreted just by its literal meaning, it metaphorically represents the loss of one's authentic self"
 date=2024-02-04
 
 [taxonomies]
