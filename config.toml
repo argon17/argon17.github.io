@@ -57,6 +57,13 @@ navbar_items = [
     ] },
 ]
 
+[extra.favicon]
+favicon_16x16 = "/icons/favicon-16x16.png"
+favicon_32x32 = "/icons/favicon-32x32.png"
+apple_touch_icon = "/icons/apple-touch-icon.png"
+safari_pinned_tab = "/icons/safari-pinned-tab.svg"
+webmanifest = "/icons/site.webmanifest"
+
 [extra.social]
 github = "argon17"
 linkedin = "argon17"
@@ -65,5 +72,5 @@ instagram = "_argon17"
 
 [extra.author]
 name = "Argon"
-avatar = "images/avatar.png"
+avatar = "images/avatar.jpg"
 
