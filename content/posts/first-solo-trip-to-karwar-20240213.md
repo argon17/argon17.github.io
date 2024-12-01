@@ -13,7 +13,7 @@ tags = ["motorcycling", "travel", "xpulse"]
 |--------------------------------------------------------------------------------------------------|
 
 I had taken a few days off from work — not because I was burnt out or had any plans, but simply because I needed a break. I believe in the mantra:
-**"Rest while you can, not when you have to."** 😉
+**"Rest while you can, not when you have to ;-)"**
 
 I set my status as *Out of Office* on Webex. That evening, my flatmate Ranjan called me and asked,
 *"Kahin ghoomne jaa rahe ho kya? Tumhare Webex pe Out of Office dikh raha hai."*

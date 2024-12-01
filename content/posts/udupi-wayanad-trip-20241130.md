@@ -8,8 +8,8 @@ categories = ["Motorcycling"]
 tags = ["motorcycling", "travel"]
 +++
 
-<div class="columns">
-  <div class="column">
+<div class="columns is-centered">
+  <div class="column is-10">
     <img src="/images/posts/udupi-wayanad-trip-20241130/D4_WayanadExploration1.jpg">
   </div>
 </div>
@@ -18,11 +18,13 @@ It had been a long time since I went on a solo motorcycle ride.
 
 All I needed was a good motorcycle trip — just me, the bike, and the open roads.
 
-**My Maslow's Hierarchy of Needs (sarcasm intended):**
+**My version of Maslow's Pyramid ;-)**
 
-- Self-fulfillment Needs → Motorcycling
-- Psychological Needs → Motorcycling
-- Basic Needs → Motorcycling
+<div class="columns is-centered">
+  <div class="column is-7">
+    <img src="/images/posts/udupi-wayanad-trip-20241130/MaslowsPyramid.png">
+  </div>
+</div>
 
 Since my birthday was around the corner, I wanted this trip to be during my birthday week.
 
@@ -96,8 +98,8 @@ Later, I visited the **Hanging Bridge in Heroor**. The views from the bridge wer
 
 In the evening, I rode to **Maravanthe Beach**, where the road runs between the sea on one side and a river on the other.
 
-<div class="columns">
-  <div class="column">
+<div class="columns is-centered">
+  <div class="column is-10">
     <img src="/images/posts/udupi-wayanad-trip-20241130/D2_MaravantheBeach.jpg">
   </div>
 </div>
@@ -171,7 +173,7 @@ My day began with visits to **Karapuzha Dam** and **Kanthanpara Waterfalls**.
 
 Then, I turned off my maps and rode through random countryside roads to explore freely.
 
-<div class="columns is-mobile is-align-items-center is-justify-content-center">
+<div class="columns is-mobile">
   <div class="column">
     <img src="/images/posts/udupi-wayanad-trip-20241130/D4_WayanadExploration2.jpg">
   </div>
@@ -183,8 +185,8 @@ Then, I turned off my maps and rode through random countryside roads to explore 
 I wrapped up the day at **Banasura Sagar Dam** — the largest earth dam in India and the second largest in Asia. I took a motorboat ride there.
 The view of the vast reservoir with surrounding hills was the cherry on top of an amazing day.
 
-<div class="columns is-mobile is-align-items-center is-justify-content-center">
-  <div class="column">
+<div class="columns is-mobile is-centered">
+  <div class="column is-10">
     <img src="/images/posts/udupi-wayanad-trip-20241130/D4_BanasuraSagarDam1.jpg">
   </div>
 </div>
@@ -196,7 +198,7 @@ The view of the vast reservoir with surrounding hills was the cherry on top of a
 On the way back, I rode through the **Bandipur Forest**.
 I took a breakfast break at **Vinayaka Mylari** in **Mysuru** for their legendary masala dosa.
 
-<div class="columns is-mobile is-align-items-center is-justify-content-center">
+<div class="columns is-mobile is-centered">
   <div class="column is-7">
     <img src="/images/posts/udupi-wayanad-trip-20241130/D5_BandipurNationalForest.jpg">
   </div>
