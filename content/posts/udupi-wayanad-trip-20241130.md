@@ -40,10 +40,10 @@ With my luggage packed and strapped to the bike, I was all set!
 
 <div class="columns is-mobile">
   <div class="column is-half">
-    <img src="/images/posts/udupi-wayanad-trip-20241130/D0_Map1.png" alt="Map">
+    <img src="/images/posts/udupi-wayanad-trip-20241130/MapRoute.png" alt="Map">
   </div>
   <div class="column is-half">
-    <img src="/images/posts/udupi-wayanad-trip-20241130/D0_Packing.jpg" alt="Packing">
+    <img src="/images/posts/udupi-wayanad-trip-20241130/Packing.jpeg" alt="Packing">
   </div>
 </div>
 
