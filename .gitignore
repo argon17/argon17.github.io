@@ -1,2 +1,8 @@
 # Ignore build output directory
 /public/
+
+# Firebase
+firebase.json
+.firebaserc
+.firebase/
+.github/workflows/firebase*
