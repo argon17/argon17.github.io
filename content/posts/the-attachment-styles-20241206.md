@@ -6,6 +6,9 @@ date=2024-12-07
 [taxonomies]
 categories = ["Reflections"]
 tags = ["writing", "reflections", "human-psychology"]
+
+[extra]
+toc = true
 +++
 
 <div class="columns is-centered">
@@ -23,8 +26,9 @@ Understanding these patterns helps us in knowing ourselves and the people in our
 
 Once we understand our attachment style, we can work on ourselves to develop the secure attachment style and form healthier relationships.
 
+# Different Types of Attachment Styles
 
-# 1. Secure Attachment
+## 1. Secure Attachment
 
 In the early childhood, the caregivers provide consistent support, protection and are emotionally available. This creates an environment of trust and safety for the child. 
 
@@ -37,7 +41,7 @@ The child feels comfortable exploring their surrounding, knowing that they have 
 - Able to offer emotional support to others while maintaining healthy boundaries
 - Feel safe and secure around their loved ones
 
-# 2. Ambivalent Attachment
+## 2. Ambivalent Attachment
 
 This attachment style develops due to inconsistent and unpredictable caregiving. Sometimes the caregiver is attentive and loving, while at other times they may be emotionally unavailable.
 
@@ -50,7 +54,7 @@ As a result, the child becomes clingy, seeking attention and staying close to th
 - A constant need for validation and reassurance
 - Difficulty trusting that others won't leave them
 
-# 3. Avoidant Attachment
+## 3. Avoidant Attachment
 
 This style develops when caregivers are consistently emotionally unavailable, and the child is left alone too much. 
 
@@ -62,7 +66,7 @@ In response, the child learns to supress their emotional needs. They learn to re
 - They may seem independent and self-sufficient, but often feel lonely and disconnected
 - Struggle to express their feelings, reach out and ask for help
 
-# 4. Disorganized Attachment
+## 4. Disorganized Attachment
 
 Disorganized attachment style are formed, when the child grows up in a chaotic or frightening environments.
 
