@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://argon17.github.io/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+argon | Reverse Nodes in k-Group
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;argon17.github.io">
+          
+            argon.
+          
+        </a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            Reverse Nodes in k-Group
+          </h1>
+          <!-- <p class="subtitle">A detailed step-by-step breakdown of the LeetCode Hard &#x27;Reverse Nodes in k-Group&#x27; problem, with a clear explanation and a C++ implementation</p> -->
+          <br>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Prem published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2021-08-14">August 14, 2021</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>2 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>313 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/categories/programming/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Programming</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/tags/programming/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>programming</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/tags/algorithms/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>algorithms</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/tags/leetcode/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>leetcode</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>So, after a very good amount of struggle, finally I was able to solve this problem<code>[1]</code>.
+The main intuition behind the solution is that, for each group of k nodes, we need to reverse the links between them, which is exactly <code>(k-1)</code> links.</p>
+<h3 id="example">Example:</h3>
+<p>Consider the following linked list:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; NULL
+</span></code></pre>
+<p>And let <code>k = 3</code>.</p>
+<p>for this example, we've only one group of 3 nodes, (which is <code>1 -&gt; 2 -&gt; 3</code>). So, we'll reverse both the links in the group one by one</p>
+<ul>
+<li>
+<p><strong>After 1st reversal:</strong></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>2 -&gt; 1 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; NULL
+</span></code></pre>
+</li>
+<li>
+<p><strong>After 2nd reversal:</strong></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>3 -&gt; 2 -&gt; 1 -&gt; 4 -&gt; 5 -&gt; NULL
+</span></code></pre>
+</li>
+</ul>
+<p>Now, let's dive into how we can reverse each link in the group smartly.</p>
+<h3 id="visualization">Visualization</h3>
+<p>Here is a sketch to help visualize the process of reversing a single link in the group:</p>
+<p><img src="https://raw.githubusercontent.com/argon17/SDESheet/refs/heads/master/LeetcodeDiscussions/imgs/reverseNodesKGroup.png" alt="image" /></p>
+<p>The following three lines of code reverse a single link without affecting the others. Let's break it down line by line:</p>
+<ol>
+<li><strong>Before reversing</strong> the <code>b -&gt; c</code> link, we hold the <code>c</code>'s next using <code>b</code>'s next, so we don’t lose it.</li>
+<li>Now, <strong>reverse</strong> the <code>b -&gt; c</code> link and point <code>c</code>'s next to <code>a</code>'s next (which is currently <code>b</code>).</li>
+<li>Finally, <strong>point</strong> <code>a</code>'s next to <code>c</code> to complete the reversal.</li>
+</ol>
+<p>These three magical lines reverses one link, without affecting the other links. Let's break it down line by line.</p>
+<ol>
+<li><strong>Before reversing</strong> the <code>b -&gt; c</code> link, we hold the <code>c</code>'s next using <code>b</code>'s next, so we don’t lose it.</li>
+<li>Now, <strong>reverse</strong> the <code>b -&gt; c</code> link by pointing <code>c</code>'s next to <code>a</code>'s next (which is currently <code>b</code>).</li>
+<li>Finally, <strong>point</strong> <code>a</code>'s next to <code>c</code> to complete the reversal.</li>
+</ol>
+<p>Now let's have a look at the code.</p>
+<h3 id="the-code">The Code</h3>
+<p>Here’s the code that implements the solution:</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Solution </span><span style="color:#eff1f5;">{
+</span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">    ListNode</span><span>* </span><span style="color:#8fa1b3;">reverseKGroup</span><span style="color:#eff1f5;">(ListNode</span><span>* </span><span style="color:#bf616a;">head</span><span style="color:#eff1f5;">, </span><span style="color:#b48ead;">int </span><span style="color:#bf616a;">k</span><span style="color:#eff1f5;">) {
+</span><span style="color:#eff1f5;">        ListNode</span><span>*</span><span style="color:#eff1f5;"> dummy </span><span>= </span><span style="color:#b48ead;">new </span><span style="color:#bf616a;">ListNode</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">        dummy-&gt;</span><span style="color:#bf616a;">next </span><span>=</span><span style="color:#eff1f5;"> head;
+</span><span style="color:#eff1f5;">        ListNode</span><span>*</span><span style="color:#eff1f5;"> pre </span><span>=</span><span style="color:#eff1f5;"> dummy, </span><span>*</span><span style="color:#eff1f5;">cur, </span><span>*</span><span style="color:#eff1f5;">nex;
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">int</span><span style="color:#eff1f5;"> cnt </span><span>= </span><span style="color:#bf616a;">length</span><span style="color:#eff1f5;">(head);
+</span><span style="color:#eff1f5;">        </span><span style="color:#65737e;">// continue till more than k groups left
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">while</span><span style="color:#eff1f5;">(cnt</span><span>&gt;=</span><span style="color:#eff1f5;">k){
+</span><span style="color:#eff1f5;">            </span><span style="color:#65737e;">// maintain the order [ pre-&gt;cur-&gt;nex ] 
+</span><span style="color:#eff1f5;">            cur </span><span>=</span><span style="color:#eff1f5;"> pre-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">            nex </span><span>=</span><span style="color:#eff1f5;"> cur-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">            </span><span style="color:#65737e;">// reverse (k-1) links in the group
+</span><span style="color:#eff1f5;">            </span><span style="color:#b48ead;">for</span><span style="color:#eff1f5;">(</span><span style="color:#b48ead;">int</span><span style="color:#eff1f5;"> i </span><span>= </span><span style="color:#d08770;">1</span><span style="color:#eff1f5;">; i </span><span>&lt;</span><span style="color:#eff1f5;"> k; </span><span>++</span><span style="color:#eff1f5;">i)
+</span><span style="color:#eff1f5;">                </span><span style="color:#bf616a;">reverseSingleLink</span><span style="color:#eff1f5;">(pre, cur, nex);
+</span><span style="color:#eff1f5;">            cnt </span><span>-=</span><span style="color:#eff1f5;"> k;
+</span><span style="color:#eff1f5;">            </span><span style="color:#65737e;">// to move to next group, pre will now be cur
+</span><span style="color:#eff1f5;">            pre </span><span>=</span><span style="color:#eff1f5;"> cur;
+</span><span style="color:#eff1f5;">        }
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;"> dummy-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    }
+</span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">reverseSingleLink</span><span style="color:#eff1f5;">(ListNode</span><span>* &amp;</span><span style="color:#bf616a;">pre</span><span style="color:#eff1f5;">, ListNode</span><span>* &amp;</span><span style="color:#bf616a;">cur</span><span style="color:#eff1f5;">, ListNode</span><span>* &amp;</span><span style="color:#bf616a;">nex</span><span style="color:#eff1f5;">){
+</span><span style="color:#eff1f5;">        </span><span style="color:#65737e;">// to move forward in the group
+</span><span style="color:#eff1f5;">        nex </span><span>=</span><span style="color:#eff1f5;"> cur-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        </span><span style="color:#65737e;">// those three magical lines
+</span><span style="color:#eff1f5;">        cur-&gt;</span><span style="color:#bf616a;">next </span><span>=</span><span style="color:#eff1f5;"> nex-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        nex-&gt;</span><span style="color:#bf616a;">next </span><span>=</span><span style="color:#eff1f5;"> pre-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        pre-&gt;</span><span style="color:#bf616a;">next </span><span>=</span><span style="color:#eff1f5;"> nex;
+</span><span style="color:#eff1f5;">    }
+</span><span style="color:#eff1f5;">    </span><span style="color:#65737e;">// to find the length of the list
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">int </span><span style="color:#8fa1b3;">length</span><span style="color:#eff1f5;">(ListNode</span><span>* </span><span style="color:#bf616a;">head</span><span style="color:#eff1f5;">){
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">int</span><span style="color:#eff1f5;"> cnt </span><span>= </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">while</span><span style="color:#eff1f5;">(head){
+</span><span style="color:#eff1f5;">            </span><span>++</span><span style="color:#eff1f5;">cnt;
+</span><span style="color:#eff1f5;">            head </span><span>=</span><span style="color:#eff1f5;"> head-&gt;</span><span style="color:#bf616a;">next</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        }
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;"> cnt;
+</span><span style="color:#eff1f5;">    }
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h3 id="reference">Reference</h3>
+<p><code>[1]</code> <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/">Leetcode 25 - Reverse Nodes in k-Group</a></p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;posts&#x2F;an-introverts-voice-20200830&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              An Introvert&#x27;s Voice
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;posts&#x2F;queen-of-the-house-20240204&#x2F;">
+              Queen of the house<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <!-- <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p> -->
+      <p>
+          &copy; 2024 <a href="https://github.com/argon17" class="has-text-link" target="_blank">argon</a>. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  
+  
+  
+  <script src="https://argon17.github.io/elasticlunr.min.js"></script>
+  <script src="https://argon17.github.io/search_index.en.js"></script><script src="https://argon17.github.io/js/site.js"></script>
+
+  
+
+
+
+
+
+  
+  
+</body>
+
+</html>
