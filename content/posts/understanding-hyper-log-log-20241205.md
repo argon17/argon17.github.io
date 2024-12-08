@@ -12,6 +12,12 @@ toc = true
 katex = true
 +++
 
+<div class="columns is-centered">
+  <div class="column is-half">
+    <img src="/images/posts/understanding-hyper-log-log-20241205/Poster.jpeg">
+  </div>
+</div>
+
 A few months ago, I came across a really cool data structure called **HyperLogLog**.
 It was super interesting to learn how it works!
 
