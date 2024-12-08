@@ -108,6 +108,13 @@ Finally, we calculate the **average** of these values for a better estimate.
 
 #### Improvement 2: Single Hash Function with Bucketing
 Using multiple hash functions is computationally expensive. Instead, we can use a single hash function and divide the results into {{ katex(body="2^b") }} buckets.
+
+<div class="columns is-centered">
+  <div class="column is-10">
+    <img src="/images/posts/understanding-hyper-log-log-20241205/HyperLogLogWorking.png">
+  </div>
+</div>
+
 - The first {{ katex(body="b") }} bits of the hash determine which bucket to use.
 - And the remaining bits are used to find the length of consecutive zeroes for that bucket.
 
