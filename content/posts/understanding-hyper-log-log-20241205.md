@@ -122,10 +122,10 @@ Harmonic mean is better at handling outliers, which ensures more accurate result
 
 For example, suppose, most of our buckets have similar values except one, which is the outlier.
 {% katex(block=true) %}6,5,7,100{% end %}
-- The arithmetic mean would calculate:
-{% katex(block=true) %}=\frac{6+5+7+100}{3}=29.5{% end %}
-- And the Harmonic mean would be
-{% katex(block=true) %}\frac{4}{\frac{1}{6} + \frac{1}{5} + \frac{1}{7} + \frac{1}{100}}\approx7.69{% end %}
+- The Arithmetic Mean would calculate to
+{% katex(block=true) %}=\frac{6+5+7+100}{4}=29.5{% end %}
+- and the Harmonic Mean would be
+{% katex(block=true) %}=\frac{4}{\frac{1}{6} + \frac{1}{5} + \frac{1}{7} + \frac{1}{100}}\approx7.69{% end %}
 
 We can see, the harmonic mean provides a better result by minimizing the effect of the outlier.
 
