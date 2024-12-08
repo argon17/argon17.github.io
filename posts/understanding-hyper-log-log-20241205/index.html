@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://argon17.github.io/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+argon | HyperLogLog - Efficient Cardinality Estimation
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;argon17.github.io">
+          
+            argon.
+          
+        </a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            HyperLogLog - Efficient Cardinality Estimation
+          </h1>
+          <!-- <p class="subtitle">A simple explanation of HyperLogLog for efficient estimation of unique elements</p> -->
+          <br>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Prem published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2024-12-08">December 08, 2024</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>5 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>940 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/categories/programming/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Programming</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/tags/programming/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>programming</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/tags/data-structures/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>data-structures</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://argon17.github.io/tags/probability/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>probability</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <div class="columns is-centered">
+  <div class="column is-half">
+    <img src="/images/posts/understanding-hyper-log-log-20241205/Poster.jpeg">
+  </div>
+</div>
+<p>A few months ago, I came across a really cool data structure called <strong>HyperLogLog</strong>.
+It was super interesting to learn how it works!</p>
+<p>Imagine, we've an array and we want to find the number of distinct elements in it.</p>
+<p>The most straighforward approach would be to go over each element in the array and track the distinct elements using a set or a hashmap.</p>
+<p>This is a basic algorithm with <strong>linear space and time complexities</strong>.</p>
+<h3 id="the-problem-with-linear-algorithm">The Problem with Linear Algorithm</h3>
+<p>Assuming, an array of 32 bit integers on a machine capable of performing <script type="math/tex">10^8</script> operations in a second.</p>
+<p>Here is a table showing how much memory and time this algorithm would consume for different array sizes:</p>
+<table><thead><tr><th>Array Size</th><th>Time Taken</th><th>Memory</th></tr></thead><tbody>
+<tr><td>100 million</td><td>1 second</td><td>381 MB</td></tr>
+<tr><td>1 billion</td><td>10 seconds</td><td>3.72 GB</td></tr>
+<tr><td>10 billion</td><td>1.67 minutes</td><td>37.25 GB</td></tr>
+<tr><td>100 billion</td><td>16.67 minutes</td><td>372 GB</td></tr>
+<tr><td>1 trillion</td><td>2.78 hours</td><td>3.636 TB</td></tr>
+<tr><td>10 trillion</td><td>28 hours</td><td>36.36 TB</td></tr>
+</tbody></table>
+<p>As array sizes grow, time and memory requirements increase rapidly. For instance, processing 10 trillion elements would require 36 TB of memory and 28 hours!</p>
+<p>This is where <strong>HyperLogLog</strong> shines. It’s a <strong>probabilistic data structure</strong> that provides highly accurate estimates of distinct elements while using <strong>significantly lesser amount of memory and time</strong>.</p>
+<h3 id="the-underlying-concept">The Underlying Concept</h3>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <img src="/images/posts/understanding-hyper-log-log-20241205/FancyRegistrationNumber.png">
+  </div>
+</div>
+<h4 id="vehicle-registration-number-analogy">Vehicle Registration Number Analogy</h4>
+<p>Have you ever noticed how people go crazy for those fancy vehicle registration numbers?
+The transport department even does auctions for these fancy registration numbers and people spend a lot of money for it.</p>
+<p>When people are spending their money for numbers like 0001, 4444, or 9999, they are just choosing something that stands out.</p>
+<p>People love these because they feel unique, right?
+Such numbers are rare and less likely to repeat in a random set of vehicle's registration numbers.</p>
+<p>They are rare and unique. Fine, but how can we measure how unique something is? This is where <strong>probability</strong> helps.</p>
+<p>Let’s use binary numbers to understand this concept.</p>
+<h4 id="probability-of-consecutive-zero-pattern">Probability of Consecutive Zero Pattern</h4>
+<p>For a 3-bit binary number, there are <strong>8 possible combinations</strong>. Among them, the pattern <strong>000</strong> appears exactly <strong>once</strong>:</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>...000</td><td>...100</td></tr>
+<tr><td>...001</td><td>...101</td></tr>
+<tr><td>...010</td><td>...110</td></tr>
+<tr><td>...011</td><td>...111</td></tr>
+</tbody></table>
+<p>Mathematically:</p>
+<p>Probability of encoutering a pattern with <strong>k consecutive zeroes</strong> is
+<script type="math/tex;mode=display">\frac{1}{2^k}</script></p>
+<p>In simpler terms, a sequence of k consecutive zeroes will occur once in every <script type="math/tex">2^k</script> distinct elements, on average.</p>
+<p>If we observe a pattern of k consecutive zeroes in a uniformly distributed dataset, it implies that the dataset likely has <script type="math/tex">2^k</script> distinct elements.</p>
+<p>Hence, by simply tracking the <strong>longest sequence of consecutive zeroes</strong>, we can estimate the number of distinct elements in a dataset.</p>
+<p>Also, The algorithm uses a <strong>hash function</strong> to transform the original data into uniformly distributed random numbers.</p>
+<p>With this, <strong>we’ve established the base of the algorithm</strong>.</p>
+<h5 id="quick-riddle">Quick Riddle:</h5>
+<p>If all patterns in the above table have the same probability of occurence, <strong>why do we focus on consecutive zeroes</strong> for this algorithm?</p>
+<details>
+  <summary><b>Show Answer</b></summary>
+  Because, the consecutive pattern can be extended to higher number of bits easily.
+</details>
+<h3 id="improving-accuracy">Improving Accuracy</h3>
+<h4 id="improvement-1-using-multiple-hash-functions">Improvement 1: Using Multiple Hash Functions</h4>
+<p>The above algorithm gives a good estimate, but it is still far from accurate.</p>
+<p>To improve the accuracy, we can use <strong>multiple independent hash functions</strong> and record the longest sequence length for each.</p>
+<p>Finally, we calculate the <strong>average</strong> of these values for a better estimate.</p>
+<h4 id="improvement-2-single-hash-function-with-bucketing">Improvement 2: Single Hash Function with Bucketing</h4>
+<p>Using multiple hash functions is computationally expensive. Instead, we can use a single hash function and divide the results into <script type="math/tex">2^b</script> buckets.</p>
+<div class="columns is-centered">
+  <div class="column is-10">
+    <img src="/images/posts/understanding-hyper-log-log-20241205/HyperLogLogWorking.png">
+  </div>
+</div>
+<ul>
+<li>The first <script type="math/tex">b</script> bits of the hash determine which bucket to use.</li>
+<li>And the remaining bits are used to find the length of consecutive zeroes for that bucket.</li>
+</ul>
+<p>And at the end, we just take the average of the maximum lengths recorded in all buckets.</p>
+<h4 id="improvement-3-harmonic-mean-over-arithmetic-mean">Improvement 3: Harmonic Mean over Arithmetic Mean</h4>
+<p>This is an improvement in the last step, especially when we're averaging the results from different buckets.</p>
+<p>Instead of using the arithmetic mean to merge the results from different buckets, <strong>HyperLogLog</strong> uses the harmonic mean.</p>
+<p>Harmonic mean is better at handling outliers, which ensures more accurate results.</p>
+<p>For example, suppose, most of our buckets have similar values except one, which is the outlier.
+<script type="math/tex;mode=display">6,5,7,100</script></p>
+<ul>
+<li>The Arithmetic Mean would calculate to
+<script type="math/tex;mode=display">=\frac{6+5+7+100}{4}=29.5</script></li>
+<li>and the Harmonic Mean would be
+<script type="math/tex;mode=display">=\frac{4}{\frac{1}{6} + \frac{1}{5} + \frac{1}{7} + \frac{1}{100}}\approx7.69</script></li>
+</ul>
+<p>We can see, the harmonic mean provides a better result by minimizing the effect of the outlier.</p>
+<p>For a basic implementation of the HyperLogLog algorithm, visit my GitHub repository here: <a href="https://github.com/argon17/HyperLogLog" target="_blank">argon17/HyperLogLog</a></p>
+<h3 id="useful-references">Useful References</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/HyperLogLog" target="_blank">HyperLogLog - Wikipedia</a></li>
+<li><a href="https://engineering.fb.com/2018/12/13/data-infrastructure/hyperloglog/" target="_blank">https://engineering.fb.com/2018/12/13/data-infrastructure/hyperloglog/</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf" target="_blank">https://static.googleusercontent.com/media/​research.google.com/​en/​pubs/​archive/​40671.pdf</a></li>
+</ol>
+
+          </div>
+        </article>
+      </div>
+      
+      <div class="column is-2 is-hidden-mobile">
+        <aside class="menu" style="position: sticky; top: 48px">
+          <p class="heading has-text-weight-bold">Contents</p>
+          <ul class="menu-list">
+            
+            <li>
+              <a id="link-the-problem-with-linear-algorithm" class="toc is-size-7 is-active"
+                href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#the-problem-with-linear-algorithm">
+                The Problem with Linear Algorithm
+              </a>
+              
+            </li>
+            
+            <li>
+              <a id="link-the-underlying-concept" class="toc is-size-7 "
+                href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#the-underlying-concept">
+                The Underlying Concept
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-vehicle-registration-number-analogy" class="toc is-size-7" href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#vehicle-registration-number-analogy">
+                    Vehicle Registration Number Analogy
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-probability-of-consecutive-zero-pattern" class="toc is-size-7" href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#probability-of-consecutive-zero-pattern">
+                    Probability of Consecutive Zero Pattern
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-improving-accuracy" class="toc is-size-7 "
+                href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#improving-accuracy">
+                Improving Accuracy
+              </a>
+              
+              <ul>
+                
+                <li>
+                  <a id="link-improvement-1-using-multiple-hash-functions" class="toc is-size-7" href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#improvement-1-using-multiple-hash-functions">
+                    Improvement 1: Using Multiple Hash Functions
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-improvement-2-single-hash-function-with-bucketing" class="toc is-size-7" href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#improvement-2-single-hash-function-with-bucketing">
+                    Improvement 2: Single Hash Function with Bucketing
+                  </a>
+                </li>
+                
+                <li>
+                  <a id="link-improvement-3-harmonic-mean-over-arithmetic-mean" class="toc is-size-7" href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#improvement-3-harmonic-mean-over-arithmetic-mean">
+                    Improvement 3: Harmonic Mean over Arithmetic Mean
+                  </a>
+                </li>
+                
+              </ul>
+              
+            </li>
+            
+            <li>
+              <a id="link-useful-references" class="toc is-size-7 "
+                href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/#useful-references">
+                Useful References
+              </a>
+              
+            </li>
+            
+          </ul>
+        </aside>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;argon17.github.io&#x2F;posts&#x2F;the-attachment-styles-20241206&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              The Attachment Styles
+            </a>
+          </div>
+           
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <!-- <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p> -->
+      <p>
+          &copy; 2024 <a href="https://github.com/argon17" class="has-text-link" target="_blank">argon</a>. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  
+  
+  
+  <script src="https://argon17.github.io/elasticlunr.min.js"></script>
+  <script src="https://argon17.github.io/search_index.en.js"></script><script src="https://argon17.github.io/js/site.js"></script>
+
+  
+
+<script type="text/javascript">
+  const menuBarHeight = document.querySelector("nav.navbar").clientHeight;
+  const tocItems = document.querySelectorAll(".toc");
+  const navSections = new Array(tocItems.length);
+
+  tocItems.forEach((el, i) => {
+    let id = el.getAttribute("id").substring(5);
+    navSections[i] = document.getElementById(id);
+  })
+
+  function isVisible(tocIndex) {
+    const current = navSections[tocIndex];
+    const next = tocIndex < tocItems.length - 1 ? navSections[tocIndex + 1]
+      : document.querySelectorAll("section.section").item(1);
+
+    const c = current.getBoundingClientRect();
+    const n = next.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+
+    return (c.top <= h) && (n.top - menuBarHeight >= 0);
+  }
+
+  function activateIfVisible() {
+    for (b = true, i = 0; i < tocItems.length; i++) {
+      if (b && isVisible(i)) {
+        tocItems[i].classList.add('is-active');
+        b = false;
+      } else
+        tocItems[i].classList.remove('is-active');
+    }
+  }
+
+  var isTicking = null;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, false);
+</script>
+
+
+
+
+
+  
+  
+</body>
+
+</html>

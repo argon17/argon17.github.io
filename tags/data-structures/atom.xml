@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>argon - data-structures</title>
+    <link rel="self" type="application/atom+xml" href="https://argon17.github.io/tags/data-structures/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://argon17.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-08T00:00:00+00:00</updated>
+    <id>https://argon17.github.io/tags/data-structures/atom.xml</id>
+    <entry xml:lang="en">
+        <title>HyperLogLog - Efficient Cardinality Estimation</title>
+        <published>2024-12-08T00:00:00+00:00</published>
+        <updated>2024-12-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/"/>
+        <id>https://argon17.github.io/posts/understanding-hyper-log-log-20241205/</id>
+        
+        <content type="html" xml:base="https://argon17.github.io/posts/understanding-hyper-log-log-20241205/">&lt;div class=&quot;columns is-centered&quot;&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;posts&#x2F;understanding-hyper-log-log-20241205&#x2F;Poster.jpeg&quot;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;A few months ago, I came across a really cool data structure called &lt;strong&gt;HyperLogLog&lt;&#x2F;strong&gt;.
+It was super interesting to learn how it works!&lt;&#x2F;p&gt;
+&lt;p&gt;Imagine, we&#x27;ve an array and we want to find the number of distinct elements in it.&lt;&#x2F;p&gt;
+&lt;p&gt;The most straighforward approach would be to go over each element in the array and track the distinct elements using a set or a hashmap.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a basic algorithm with &lt;strong&gt;linear space and time complexities&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-problem-with-linear-algorithm&quot;&gt;The Problem with Linear Algorithm&lt;&#x2F;h3&gt;
+&lt;p&gt;Assuming, an array of 32 bit integers on a machine capable of performing &lt;script type=&quot;math&#x2F;tex&quot;&gt;10^8&lt;&#x2F;script&gt; operations in a second.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is a table showing how much memory and time this algorithm would consume for different array sizes:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Array Size&lt;&#x2F;th&gt;&lt;th&gt;Time Taken&lt;&#x2F;th&gt;&lt;th&gt;Memory&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;100 million&lt;&#x2F;td&gt;&lt;td&gt;1 second&lt;&#x2F;td&gt;&lt;td&gt;381 MB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;1 billion&lt;&#x2F;td&gt;&lt;td&gt;10 seconds&lt;&#x2F;td&gt;&lt;td&gt;3.72 GB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;10 billion&lt;&#x2F;td&gt;&lt;td&gt;1.67 minutes&lt;&#x2F;td&gt;&lt;td&gt;37.25 GB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;100 billion&lt;&#x2F;td&gt;&lt;td&gt;16.67 minutes&lt;&#x2F;td&gt;&lt;td&gt;372 GB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;1 trillion&lt;&#x2F;td&gt;&lt;td&gt;2.78 hours&lt;&#x2F;td&gt;&lt;td&gt;3.636 TB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;10 trillion&lt;&#x2F;td&gt;&lt;td&gt;28 hours&lt;&#x2F;td&gt;&lt;td&gt;36.36 TB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;As array sizes grow, time and memory requirements increase rapidly. For instance, processing 10 trillion elements would require 36 TB of memory and 28 hours!&lt;&#x2F;p&gt;
+&lt;p&gt;This is where &lt;strong&gt;HyperLogLog&lt;&#x2F;strong&gt; shines. It’s a &lt;strong&gt;probabilistic data structure&lt;&#x2F;strong&gt; that provides highly accurate estimates of distinct elements while using &lt;strong&gt;significantly lesser amount of memory and time&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-underlying-concept&quot;&gt;The Underlying Concept&lt;&#x2F;h3&gt;
+&lt;div class=&quot;columns is-centered&quot;&gt;
+  &lt;div class=&quot;column is-half&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;posts&#x2F;understanding-hyper-log-log-20241205&#x2F;FancyRegistrationNumber.png&quot;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;h4 id=&quot;vehicle-registration-number-analogy&quot;&gt;Vehicle Registration Number Analogy&lt;&#x2F;h4&gt;
+&lt;p&gt;Have you ever noticed how people go crazy for those fancy vehicle registration numbers?
+The transport department even does auctions for these fancy registration numbers and people spend a lot of money for it.&lt;&#x2F;p&gt;
+&lt;p&gt;When people are spending their money for numbers like 0001, 4444, or 9999, they are just choosing something that stands out.&lt;&#x2F;p&gt;
+&lt;p&gt;People love these because they feel unique, right?
+Such numbers are rare and less likely to repeat in a random set of vehicle&#x27;s registration numbers.&lt;&#x2F;p&gt;
+&lt;p&gt;They are rare and unique. Fine, but how can we measure how unique something is? This is where &lt;strong&gt;probability&lt;&#x2F;strong&gt; helps.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s use binary numbers to understand this concept.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;probability-of-consecutive-zero-pattern&quot;&gt;Probability of Consecutive Zero Pattern&lt;&#x2F;h4&gt;
+&lt;p&gt;For a 3-bit binary number, there are &lt;strong&gt;8 possible combinations&lt;&#x2F;strong&gt;. Among them, the pattern &lt;strong&gt;000&lt;&#x2F;strong&gt; appears exactly &lt;strong&gt;once&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;...000&lt;&#x2F;td&gt;&lt;td&gt;...100&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;...001&lt;&#x2F;td&gt;&lt;td&gt;...101&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;...010&lt;&#x2F;td&gt;&lt;td&gt;...110&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;...011&lt;&#x2F;td&gt;&lt;td&gt;...111&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Mathematically:&lt;&#x2F;p&gt;
+&lt;p&gt;Probability of encoutering a pattern with &lt;strong&gt;k consecutive zeroes&lt;&#x2F;strong&gt; is
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\frac{1}{2^k}&lt;&#x2F;script&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In simpler terms, a sequence of k consecutive zeroes will occur once in every &lt;script type=&quot;math&#x2F;tex&quot;&gt;2^k&lt;&#x2F;script&gt; distinct elements, on average.&lt;&#x2F;p&gt;
+&lt;p&gt;If we observe a pattern of k consecutive zeroes in a uniformly distributed dataset, it implies that the dataset likely has &lt;script type=&quot;math&#x2F;tex&quot;&gt;2^k&lt;&#x2F;script&gt; distinct elements.&lt;&#x2F;p&gt;
+&lt;p&gt;Hence, by simply tracking the &lt;strong&gt;longest sequence of consecutive zeroes&lt;&#x2F;strong&gt;, we can estimate the number of distinct elements in a dataset.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, The algorithm uses a &lt;strong&gt;hash function&lt;&#x2F;strong&gt; to transform the original data into uniformly distributed random numbers.&lt;&#x2F;p&gt;
+&lt;p&gt;With this, &lt;strong&gt;we’ve established the base of the algorithm&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h5 id=&quot;quick-riddle&quot;&gt;Quick Riddle:&lt;&#x2F;h5&gt;
+&lt;p&gt;If all patterns in the above table have the same probability of occurence, &lt;strong&gt;why do we focus on consecutive zeroes&lt;&#x2F;strong&gt; for this algorithm?&lt;&#x2F;p&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;Show Answer&lt;&#x2F;b&gt;&lt;&#x2F;summary&gt;
+  Because, the consecutive pattern can be extended to higher number of bits easily.
+&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;improving-accuracy&quot;&gt;Improving Accuracy&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;improvement-1-using-multiple-hash-functions&quot;&gt;Improvement 1: Using Multiple Hash Functions&lt;&#x2F;h4&gt;
+&lt;p&gt;The above algorithm gives a good estimate, but it is still far from accurate.&lt;&#x2F;p&gt;
+&lt;p&gt;To improve the accuracy, we can use &lt;strong&gt;multiple independent hash functions&lt;&#x2F;strong&gt; and record the longest sequence length for each.&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, we calculate the &lt;strong&gt;average&lt;&#x2F;strong&gt; of these values for a better estimate.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;improvement-2-single-hash-function-with-bucketing&quot;&gt;Improvement 2: Single Hash Function with Bucketing&lt;&#x2F;h4&gt;
+&lt;p&gt;Using multiple hash functions is computationally expensive. Instead, we can use a single hash function and divide the results into &lt;script type=&quot;math&#x2F;tex&quot;&gt;2^b&lt;&#x2F;script&gt; buckets.&lt;&#x2F;p&gt;
+&lt;div class=&quot;columns is-centered&quot;&gt;
+  &lt;div class=&quot;column is-10&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;posts&#x2F;understanding-hyper-log-log-20241205&#x2F;HyperLogLogWorking.png&quot;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;ul&gt;
+&lt;li&gt;The first &lt;script type=&quot;math&#x2F;tex&quot;&gt;b&lt;&#x2F;script&gt; bits of the hash determine which bucket to use.&lt;&#x2F;li&gt;
+&lt;li&gt;And the remaining bits are used to find the length of consecutive zeroes for that bucket.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And at the end, we just take the average of the maximum lengths recorded in all buckets.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;improvement-3-harmonic-mean-over-arithmetic-mean&quot;&gt;Improvement 3: Harmonic Mean over Arithmetic Mean&lt;&#x2F;h4&gt;
+&lt;p&gt;This is an improvement in the last step, especially when we&#x27;re averaging the results from different buckets.&lt;&#x2F;p&gt;
+&lt;p&gt;Instead of using the arithmetic mean to merge the results from different buckets, &lt;strong&gt;HyperLogLog&lt;&#x2F;strong&gt; uses the harmonic mean.&lt;&#x2F;p&gt;
+&lt;p&gt;Harmonic mean is better at handling outliers, which ensures more accurate results.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, suppose, most of our buckets have similar values except one, which is the outlier.
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;6,5,7,100&lt;&#x2F;script&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Arithmetic Mean would calculate to
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;=\frac{6+5+7+100}{4}=29.5&lt;&#x2F;script&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;and the Harmonic Mean would be
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;=\frac{4}{\frac{1}{6} + \frac{1}{5} + \frac{1}{7} + \frac{1}{100}}\approx7.69&lt;&#x2F;script&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;We can see, the harmonic mean provides a better result by minimizing the effect of the outlier.&lt;&#x2F;p&gt;
+&lt;p&gt;For a basic implementation of the HyperLogLog algorithm, visit my GitHub repository here: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;argon17&#x2F;HyperLogLog&quot; target=&quot;_blank&quot;&gt;argon17&#x2F;HyperLogLog&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;useful-references&quot;&gt;Useful References&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;HyperLogLog&quot; target=&quot;_blank&quot;&gt;HyperLogLog - Wikipedia&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;engineering.fb.com&#x2F;2018&#x2F;12&#x2F;13&#x2F;data-infrastructure&#x2F;hyperloglog&#x2F;&quot; target=&quot;_blank&quot;&gt;https:&#x2F;&#x2F;engineering.fb.com&#x2F;2018&#x2F;12&#x2F;13&#x2F;data-infrastructure&#x2F;hyperloglog&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;static.googleusercontent.com&#x2F;media&#x2F;research.google.com&#x2F;en&#x2F;&#x2F;pubs&#x2F;archive&#x2F;40671.pdf&quot; target=&quot;_blank&quot;&gt;https:&#x2F;&#x2F;static.googleusercontent.com&#x2F;media&#x2F;​research.google.com&#x2F;​en&#x2F;​pubs&#x2F;​archive&#x2F;​40671.pdf&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+</feed>
