@@ -135,5 +135,4 @@ For a basic implementation of the HyperLogLog algorithm, visit my GitHub reposit
 
 1. <a href="https://en.wikipedia.org/wiki/HyperLogLog" target="_blank">HyperLogLog - Wikipedia</a>
 2. <a href="https://engineering.fb.com/2018/12/13/data-infrastructure/hyperloglog/" target="_blank">https://engineering.fb.com/2018/12/13/data-infrastructure/hyperloglog/</a>
-3. <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf" target="_blank">https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf</a>
- 
+3. <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf" target="_blank">https://static.googleusercontent.com/media/&#8203;research.google.com/&#8203;en/&#8203;pubs/&#8203;archive/&#8203;40671.pdf</a>
